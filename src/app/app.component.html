@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <header class="pt-5">
+    <h1>Formation Angular</h1>
+    <hr />
+  </header>
+
+  <nav class="nav">
+    <a [routerLink]="['/']" class="nav-link">Acceuil</a>
+    <a [routerLink]="['/presentation']" class="nav-link">Presentation</a>
+    <a [routerLink]="['/exercice']" class="nav-link">Exercice</a>
+    <a [routerLink]="['/filter']" class="nav-link">Filter</a>
+    <a [routerLink]="['/directive']" class="nav-link">Directive</a>
+  </nav>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer>
+    <hr />
+    <p class="small text-center">Avril 2022 -Dawan FOAD -CFA CDA</p>
+  </footer>
+</div>

@@ -1,0 +1,22 @@
+<h1>Exercie</h1>
+
+<section>
+  <div class="input-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="tache"
+      [(ngModel)]="task"
+      (keyup.enter)="add()"
+    />
+    <button type="button" class="btn btn-outline-success" (click)="add()">
+      Ajouter
+    </button>
+  </div>
+
+  <ul class="list-group">
+    <li *ngFor="let t of tasks; index as index" (click)="delete(index)">
+      {{ t }}
+    </li>
+  </ul>
+</section>

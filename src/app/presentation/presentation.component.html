@@ -1,0 +1,94 @@
+<header>
+  <h2>Présentation</h2>
+</header>
+
+<section>
+  <h6>Bonjour {{ name }}</h6>
+  <p>{{ product.name }} @ {{ product.price }}&euro;</p>
+
+  <h3>Context échanppement</h3>
+  <div>{{ html }}</div>
+  <div>[innerHTML]="html"</div>
+
+  <p>
+    Les directives s'utilisent avec des [] ou sous une forme identique à un
+    attribut HTML.<br />
+    Attention les directives ne font pas partis de la Norme HTML.<br />
+    Angular propose d'utiliser tous les attributs HTML sous la forme d'une
+    directive Angular.
+  </p>
+
+  <h3>Avec un attribut HTML</h3>
+  <img src="{{ source }}" alt="Timfa" />
+
+  <h3>Avec La directive angular</h3>
+  <img [src]="source" alt="Timfa" />
+</section>
+
+<section>
+  <h1>Les Evènements</h1>
+  <div>
+    <button type="button" class="btn btn-outline-primary" (click)="clicked()">
+      Click and collect
+    </button>
+  </div>
+
+  <a href="#" (click)="confirm($event)">Supprimer ?</a>
+</section>
+
+<section>
+  <h3>Two Way dataBinding</h3>
+
+  <p>MVVM ou MMM = Model View , View Model</p>
+  <p>Banana in box [()]</p>
+
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="votre message"
+      [(ngModel)]="message"
+    />
+  </div>
+  <button
+    type="button"
+    class="btn btn-outline-success"
+    (click)="getMessageValue()"
+  >
+    Afficher le message
+  </button>
+  <p>{{ message }}</p>
+</section>
+
+<section>
+  <p>
+    Les variables de template se déclare avec <b>#nom</b> sur une balise HTML.
+    (document.querySelector() ou document.getElementById())
+  </p>
+  <p>
+    detectChange() = responsable de mettre à jour les vues en Angular (ngModel
+    et event)
+  </p>
+
+  <div>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="message"
+      #input
+      (keyup.enter)="(false)"
+    />
+  </div>
+  <p>{{ input }}</p>
+  <p>Type ={{ input.type }}</p>
+  <p>ClassName = {{ input.className }}</p>
+  <p>Value = {{ input.value }}</p>
+</section>
+
+<section>
+  <h3>Directive ngFor</h3>
+
+  <ul>
+    <li *ngFor="let u of users; index as key">{{ u }} (index = {{ key }})</li>
+  </ul>
+</section>

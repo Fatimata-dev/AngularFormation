@@ -1,0 +1,49 @@
+<header>
+  <h2>Les filtres (pipes)</h2>
+</header>
+<section>
+  <h3>Chaine de caractères</h3>
+  <!-- UpperCase LowerCase, TitleCase -->
+  <p>{{ "Hello dounia" | uppercase }}</p>
+</section>
+
+<section>
+  <h3>Numerique</h3>
+  <p>{{ 1235124582 | number }}</p>
+  <p>1/3 = {{ 1 / 3 | number: "2.2-2" }}</p>
+  <p>1/16 = {{ 1 / 16 | number: "1.2-6" }}</p>
+</section>
+
+<section>
+  <h3>Monetaire</h3>
+  <p>Code: {{ 21345698.55 | currency: "CAD":"code" }}</p>
+  <p>Symbol: {{ 21345698.55 | currency: "CAD":"symbol" }}</p>
+  <p>Symbol narrow: {{ 21345698.55 | currency: "CAD":"symbol-narrow" }}</p>
+</section>
+
+<section>
+  <h3>Date</h3>
+  <p>{{ now }}</p>
+  <p>{{ now | date: "dd/MM/yyyy" }}</p>
+  <p>{{ now | date: "hh/mm/ss" }}</p>
+
+  <p>Paris {{ now | date: "longTime" }}</p>
+  <p>Londre {{ now | date: "longTime":"+0100" }}</p>
+  <p>Mumbai {{ now | date: "longTime":"-0530" }}</p>
+</section>
+
+<section>
+  <h3>Slice</h3>
+  <ul>
+    <li *ngFor="let nom of cfas | slice: start:end">{{ nom }}</li>
+  </ul>
+
+  <div class="btn-group btn-group-sm">
+    <button class="btn btn-outline-primary" (click)="prev()" [disabled]="start">
+      &laquo;prev
+    </button>
+    <button class="btn btn-outline-primary" (click)="next()" [disabled]="end">
+      next &raquo;
+    </button>
+  </div>
+</section>
